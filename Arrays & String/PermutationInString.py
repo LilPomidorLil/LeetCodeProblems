@@ -7,7 +7,10 @@
 # Input: s1 = "ab", s2 = "eidbaooo"
 # Output: true
 # Explanation: s2 contains one permutation of s1 ("ba").
+from itertools import permutations
+from typing import List
 import collections
+
 
 class Solution:
     def checkInclusion(self, s1: str, s2: str) -> bool:
@@ -37,9 +40,26 @@ class Solution:
                     return True
         return False
 
+    # def permutation(self, s1: str) -> List[str]:
+    #     perm = list(permutations(s1))
+    #     perm_list = []
+    #     for i in range(len(perm)):
+    #         perm_list.append(''.join([*perm[i]]))
+    #     return perm_list
+    #
+    # def checkInclusion(self, s1: str, s2: str) -> bool:
+    #     # попрбуем решить задачу через перестановки
+    #     permutation = self.permutation(s1)
+    #
+    #     for i in range(len(permutation)):
+    #         if permutation[i] in s2:
+    #             return True
+    #
+    #     return False
+
 
 if __name__ == '__main__':
     obj = Solution()
-    obj.checkInclusion(s1 = "abc", s2 = "aabpchuop")
+    print(obj.checkInclusion(s1 = "abc", s2 = "aabcpchuop"))
 
 
